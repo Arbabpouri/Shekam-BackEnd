@@ -3,7 +3,8 @@ from . import models
 
 # Register your models here.
 
-admin.site.register(models.Food)
-admin.site.register(models.FoodType)
-admin.site.register(models.SideDishes)
-admin.site.register(models.Drink)
+admin.site.register(models.FoodModel)
+admin.site.register(models.FoodTypeModel)
+admin.site.register(models.SideDishesModel)
+admin.site.register(models.DrinkModel)
+admin.site.register(models.FoodPromise)

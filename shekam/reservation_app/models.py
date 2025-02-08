@@ -23,7 +23,7 @@ class WeekMealPlanModel(models.Model):
 
     class Meta:
         db_table = 'week_meal_plan'
-        verbose_name = 'برنامه هفتگی',
+        verbose_name = 'برنامه هفتگی'
         verbose_name_plural = 'برنامه های هفتگی'
     
     def __str__(self):

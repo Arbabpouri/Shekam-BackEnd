@@ -4,4 +4,4 @@ from django.apps import AppConfig
 class FoodAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'food_app'
-    verbose_name = 'برنامه وعده های غذایی'
+    verbose_name = 'وعده های غذایی'

@@ -13,10 +13,10 @@ class FoodTypeModel(models.Model):
         verbose_name_plural = 'انواع غذا'
 
     def __str__(self):
-        return f"{self.name}={self.price}"
+        return f"{self.name} {self.price}"
 
 
-class FoodPromise(models.Model):
+class FoodPromiseModel(models.Model):
     name = models.CharField(max_length=100, verbose_name="وعده غذایی")
 
     class Meta:
@@ -53,8 +53,8 @@ class DrinkModel(models.Model):
 
 
 class FoodModel(models.Model):
-    food_name = models.CharField(max_length=50, verbose_name="نام غذا")
-    food_type = models.ForeignKey(FoodTypeModel, on_delete=models.CASCADE, related_name="food_type", verbose_name="نوع غذا", null=False)
+    name = models.CharField(max_length=50, verbose_name="نام غذا")
+    type = models.ForeignKey(FoodTypeModel, on_delete=models.CASCADE, related_name="food_type", verbose_name="نوع غذا", null=False)
     side_dishes = models.ManyToManyField(SideDishesModel, verbose_name="مخلفات", blank=True)
     drink = models.ForeignKey(DrinkModel, on_delete=models.SET_NULL, verbose_name="نوشیدنی", related_name="drink", null=True, blank=True)
     rating = models.FloatField(validators=(MinValueValidator(0), MaxValueValidator(5)), verbose_name="امتیاز", default=5)
@@ -65,4 +65,4 @@ class FoodModel(models.Model):
         verbose_name_plural = 'غذا ها'
 
     def __str__(self):
-        return f"{self.food_name}|{self.food_type}"
+        return f"{self.name}|{self.type}"

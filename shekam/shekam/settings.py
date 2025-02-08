@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'reservation_app',
     'user_app',
     'food_app',
-    'django_jalali'
 ]
 
 MIDDLEWARE = [
